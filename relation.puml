@@ -1,0 +1,49 @@
+@startuml
+
+package "methods" {
+  [MyFuncs.h]
+  [inifile.h]
+  [constant.h] as constant
+  [strategy_template.h] as strategy_template
+  [position.h]
+}
+
+note right of constant
+  **结构:**
+  - EventType
+  - EventData
+  - StkGrid
+  - StkOrder
+  - StkCancel
+  - Stk
+  **变量**
+  -bsn
+end note
+
+note right of strategy_template
+  **变量:**
+  - total_order_list_by_requestID
+  - total_order_list_by_orderBSN
+  - order_detail
+  - order_to_send
+  - order_mutex
+end note
+
+package "tools" {
+  [EventQueue.h]
+  [database.h]
+  [logger.h]
+}
+
+package "config" {
+  [api_config.ini]
+}
+
+package "src" {
+  [main.cpp]
+  [maBpuStkReq.h]
+  [maBpuStkRsp.h]
+  [strategy.h]
+}
+
+@enduml

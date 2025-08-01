@@ -1,0 +1,101 @@
+
+#
+# 客户类型
+# 0 = 委托客户；1 = 接口客户
+#
+
+Client.Type = 0
+
+# 
+# 是否压缩
+# Rq.Callback.Compress snappy压缩方法，压缩速度快
+# Rq.Callback.Compress2 bzip2压缩方法，压缩率大
+# 
+
+Rq.Callback.Compress=0
+Rq.Callback.Compress2=0
+
+#
+# reconnect interval, milliseconds
+#
+#
+
+Rq.Reconnect.Interval=1000
+Rq.Mcast.Rate=1000000
+Rq.Mcast.RecoverInterval=0
+
+#
+# 客户端线程池，大于2, 则回调函数会并发运行
+#
+#
+
+Ice.ThreadPool.Client.Size=1
+
+#
+# 客户端线程池上限
+#
+#
+
+Ice.ThreadPool.Client.SizeMax=1
+
+#########################################################################
+#                                                                       #
+#               下面的配置文件，用户不需要修改                          #
+#                                                                       #
+#########################################################################
+
+#
+#
+# 客户端每次接受数据大小，M单位
+#
+#
+
+Ice.MessageSizeMax=0
+
+#
+# Client 网络策略，不主动关闭链接；向服务器发送心跳以保持链接
+#
+
+Ice.ACM.Close=0      # CloseOff
+Ice.ACM.Heartbeat=3  # HeartbeatOnIdle
+Ice.ACM.Timeout=30
+
+
+#
+# socket buffer
+#
+
+Ice.TCP.RcvSize=65535
+Ice.TCP.SndSize=65535
+
+
+# 下面的设置为调试选项，生产中应关闭，采用默认设置
+
+# 
+# Warn about connection exceptions 
+# 
+
+Ice.Warn.Connections=1 
+
+#
+# Network Tracing
+#
+# 0 = no network tracing
+# 1 = trace connection establishment and closure
+# 2 = like 1, but more detailed
+# 3 = like 2, but also trace data transfer
+#
+#
+
+#Ice.Trace.Network=3
+#Ice.Trace.Admin.Logger=2
+#Ice.Trace.Slicing=1
+#Ice.Trace.ThreadPool=1
+
+#
+# 启用可以查看协议
+# 
+# 
+#
+#
+#Ice.Trace.Protocol=1
